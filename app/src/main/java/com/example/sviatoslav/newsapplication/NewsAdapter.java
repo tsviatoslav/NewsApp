@@ -33,7 +33,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Article article = newsSuite.getArticle(position);
         holder.subject.setText(article.getTitle());
-
         String shortDescription = article.getDescription();
         if (shortDescription.length() > 60){
             shortDescription = shortDescription.substring(0,60) + "...";
@@ -44,7 +43,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
                 .placeholder(R.drawable.image_not_found)
                 .error(R.drawable.image_not_found)
                 .into(holder.image);
-
         //OnViewClickListener
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +55,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
                 intent.putExtra("description", article.getDescription());
                 intent.putExtra("image_url", article.getUrlToImage());
                 intent.putExtra("url", article.getUrl().toString());
-                holder.itemView.getContext().startActivity(intent);
 
+                holder.itemView.getContext().startActivity(intent);
             }
         });
     }

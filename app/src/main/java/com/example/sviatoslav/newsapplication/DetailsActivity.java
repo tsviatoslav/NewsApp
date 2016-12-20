@@ -42,12 +42,9 @@ public class DetailsActivity extends AppCompatActivity {
         description.setText(intent.getStringExtra("description"));
         link.setText("More details: " + intent.getStringExtra("url"));
         Picasso.with(image.getContext())
-        .load(intent.getStringExtra("image_url"))
+                .load(intent.getStringExtra("image_url"))
                 .placeholder(R.drawable.image_not_found)
                 .error(R.drawable.image_not_found)
                 .into(image);
-
-
-
     }
 }

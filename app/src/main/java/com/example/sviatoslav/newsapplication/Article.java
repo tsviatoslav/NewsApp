@@ -4,9 +4,17 @@ import java.net.URL;
 
 /**
  * Created by Sviatoslav on 12/19/2016.
+ * This model contains all data from news article.
  */
 
 public class Article {
+    private String author;
+    private String title;
+    private String description;
+    private URL url;
+    private String urlToImage;
+    private String publishedAt;
+
     public String getAuthor() {
         return author;
     }
@@ -30,12 +38,5 @@ public class Article {
     public String getPublishedAt() {
         return publishedAt;
     }
-
-    private String author;
-    private String title;
-    private String description;
-    private URL url;
-    private String urlToImage;
-    private String publishedAt;
 
 }

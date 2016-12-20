@@ -17,17 +17,18 @@ import java.net.URL;
  */
 
 public class GetNewsAsyncTask extends AsyncTask {
+
     private HttpURLConnection urlConnection = null;
     private BufferedReader reader = null;
     String jsonResultStr = null;
 
-    protected interface AsyncResponse{
+    protected interface AsyncResponse {
         void processFinish(String output);
     }
 
     private AsyncResponse delegate = null;
 
-    GetNewsAsyncTask(AsyncResponse delegate){
+    GetNewsAsyncTask(AsyncResponse delegate) {
         this.delegate = delegate;
     }
 
