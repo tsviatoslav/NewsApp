@@ -38,8 +38,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
             shortDescription = shortDescription.substring(0,60) + "...";
         }
         holder.description.setText(shortDescription);
+        String imageUrl = article.getUrlToImage();
+        String smallImage = (imageUrl.split("\\?"))[0].concat("?w=800");
         Picasso.with(holder.image.getContext())
-                .load(article.getUrlToImage())
+                .load(smallImage)
                 .placeholder(R.drawable.image_not_found)
                 .error(R.drawable.image_not_found)
                 .into(holder.image);
